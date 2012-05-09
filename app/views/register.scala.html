@@ -1,0 +1,37 @@
+@(registrationForm: Form[models.Registration])
+
+@import play.api.i18n._
+@import views.html.helper._
+
+@input(field: Field, label: String, fieldType: Symbol = 'text) = {
+  <div class="control-group @if(field.hasErrors) {error}">
+    <label class="control-label" for="@field.id">@label</label>
+    <div class="controls">
+      <input type="@fieldType" value="@field.value" name="@field.id" />
+      @if(field.hasErrors){
+        <span class="help-inline">
+          @Messages(field.error.head.message)
+        </span>
+      }
+    </div>
+  </div>
+}
+
+@main("Super Simple Sample") {
+
+    @* GLOBAL ERROR/FLASH MESSAGE *@
+    @registrationForm.globalError.map { error => 
+      <div class="alert alert-error">@error.message</div>
+    }
+
+    @form(action = routes.Register.register, 'class -> "form-horizontal") {
+      <fieldset>
+        <legend>Registration</legend>
+        @input(registrationForm("username"), "Username")
+        @input(registrationForm("password"), "Password", 'password)
+        @input(registrationForm("confirm"), "Confirm Password", 'password)
+        @input(registrationForm("realName"), "Real Name")
+      </fieldset>
+      <input type="submit" class="btn" value="register"/>
+    }
+}

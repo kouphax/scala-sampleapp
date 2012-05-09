@@ -1,0 +1,22 @@
+logs
+project/project
+project/target
+target
+tmp
+.history
+dist
+.DS_Store
+
+# eclipse conf file
+.settings
+.classpath
+.project
+.manager
+.scala_dependencies
+.cache
+
+# idea conf files
+.idea
+*.iml
+*.ipr
+*.iws
