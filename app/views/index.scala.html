@@ -1,3 +1,27 @@
+@(registrations: List[Registration])(implicit flash: Flash)
 @main("Super Simple Sample") {
-    <a href="@routes.Register.index">Register</a>
+  @if(flash.data.contains("message")){
+    <div class='row'>
+      <div class="alert alert-success" style="margin-left:30px;margin-top:20px;">@flash.get("message")</div>
+    </div>
+  }
+  <div style="margin-top:20px;margin-bottom:20px;">
+    <a href="@routes.Register.index" class="btn btn-primary">Register</a>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Real Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      @registrations.map { registration => 
+        <tr>
+          <td>@registration.username</td>
+          <td>@registration.realName</td>
+        </tr>
+      }
+    </tbody>
+  </table>
 }

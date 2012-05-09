@@ -21,14 +21,17 @@ object Register extends Controller {
       })
   )
 
-  def index = Action {
-    Ok(views.html.register(registrationForm.fill(Registration("","","",""))))
+  def index = Action { implicit request =>
+    Ok(views.html.register(registrationForm))
   }
 
   def register = Action { implicit request =>
     registrationForm.bindFromRequest.fold(
       form => BadRequest(views.html.register(form)),
-      registration => Redirect(routes.Application.index())
+      registration => {
+        Registrations.create(registration)
+        Redirect(routes.Application.index()).flashing("message" -> "User Registered!")
+      }
     )
   }
 }
