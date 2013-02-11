@@ -9,7 +9,7 @@ object ApplicationBuild extends Build {
 
     val appDependencies = Seq(
       "com.github.twitter" %  "bootstrap"  % "2.0.2",
-      "org.mongodb"         %% "casbah-core"     % "2.5.0-SNAPSHOT",
+      "org.mongodb"         %% "casbah-core"     % "2.5.0",
       "com.novus"          %% "salat-core" % "1.9.2-SNAPSHOT"
     )
 

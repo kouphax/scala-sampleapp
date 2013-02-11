@@ -7,5 +7,5 @@ Example of a Scala project using Play &amp; Mongo (Casbah/Salat)
 ## Versions used:
 * Scala 2.10
 * Play 2.1-RC2
-* Casbah 2.5-SNAPSHOT
+* Casbah 2.5
 * Salat 1.9.2-SNAPSHOT
