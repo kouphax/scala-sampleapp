@@ -2,7 +2,8 @@ Sample Play application
 =====================================
 
 Example of a Scala project using Play &amp; Mongo (Casbah/Salat)
-<br/>Based on blog post from: http://yobriefca.se/blog/2012/05/08/starter-for-10-scala/
+
+Based on blog post from: http://yobriefca.se/blog/2012/05/08/starter-for-10-scala-play-2-and-mongo/
 
 ## Versions used:
 * Scala 2.10
